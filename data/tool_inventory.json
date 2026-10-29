@@ -1,0 +1,284 @@
+[
+  {
+    "tool": "LangGraph",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Pydantic AI",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "OpenMetadata",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Cube",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "MetricFlow",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "DataHub",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Valentine",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Embedding model TBD",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "WrenAI",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "DB-GPT",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Vanna",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "PremSQL",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Pandera",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Polars",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Great Expectations",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Soda Core",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "dbt",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "datacompy",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "clickhouse-connect",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Data Formulator",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "PandasAI",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "DoWhy",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "PyRCA",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "statsmodels",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "StatsForecast",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Prophet",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "AIDE",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "RD-Agent",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Evidence.dev",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "@evidence-dev/clickhouse",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Marimo",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Quarto",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Superset",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "LIDA",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Metabase",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Prefect",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Dagster",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Airflow",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Elementary",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "ClickHouse",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Apache Ranger",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Presidio",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "Langfuse",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "promptfoo",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "DeepEval",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "pgvector",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  },
+  {
+    "tool": "LlamaIndex",
+    "status": "UNVERIFIED",
+    "evidence": [],
+    "note": "Chưa tra cứu; bản cài không đồng nghĩa bản mới nhất."
+  }
+]

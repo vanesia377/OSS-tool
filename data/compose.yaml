@@ -1,0 +1,23 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server@sha256:0152dd511befe6a2c2ef53e930726179669b08116da78500b37c51c96ff5ee77
+    container_name: vf-playground-clickhouse
+    ports:
+      - '127.0.0.1:8123:8123'
+    environment:
+      CLICKHOUSE_SKIP_USER_SETUP: '1'
+    volumes:
+      - vf_mock_ch:/var/lib/clickhouse
+    mem_limit: 4g
+    cpus: 2
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test: ['CMD', 'clickhouse-client', '--query', 'SELECT 1']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  vf_mock_ch:

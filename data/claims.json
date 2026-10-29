@@ -1,0 +1,214 @@
+{
+  "B1": {
+    "title": "LangGraph interrupt + checkpointer",
+    "original": "X1 + 1 (Điều phối, Hỏi lại)\tLangGraph (Tái sử dụng cho 1, 3a, 4a, 4b)\tPydantic AI\tDùng ngay\tDùng interrupt() cho node làm rõ câu hỏi mơ hồ, checkpointer để nhớ ngữ cảnh hỏi đáp tiếp theo (R01, R41, R46).",
+    "phase": 2,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B2": {
+    "title": "OpenMetadata ClickHouse/Glossary/PII",
+    "original": "2a (Catalog)\tOpenMetadata (Tái sử dụng cho 1, 2a, X2)\tDataHub\tThử nhanh\tCần test nhanh connector ClickHouse. Chọn OpenMetadata vì có sẵn Glossary (Bước 1) và Auto-PII (Bước X2) mà DataHub thiếu.",
+    "phase": 4,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": true
+  },
+  "B3": {
+    "title": "Metric YAML + Cube",
+    "original": "1 (Metric chuẩn)\tFile YAML nội bộ + Glossary trong OpenMetadata(0 thêm OSS mới)\tCube\tDùng ngay\tKhông cài thêm tool. Tận dụng luôn OpenMetadata ở 2a. Bỏ MetricFlow (hỗ trợ ClickHouse mới ở mức experimental).",
+    "phase": 3,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B4": {
+    "title": "Valentine/embedding/hybrid",
+    "original": "2b (Khớp mô tả ↔ cột)\tValentine + Embedding (Lưu/tìm vector ngay trên RAM hoặc ClickHouse)\tChỉ dùng Embedding\tDùng ngay (Đo hiệu quả)\tBỏ pgvector (vì dùng ClickHouse). Tối giản OSS: Không cần cài toàn bộ LlamaIndex nặng nề nếu chỉ gọi API Embedding + dùng hàm cosineDistance của ClickHouse kết hợp điểm khớp của Valentine. Cần đo thực tế trên tên cột viết tắt & tiếng Việt (R13).",
+    "phase": 3,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B5": {
+    "title": "SQL execution accuracy + promptfoo",
+    "original": "3a (Sinh SQL)\tTự dựng trên LangGraph (Few-shot ClickHouse SQL + Schema từ 2a)\tWrenAI, DB-GPT\tCần benchmark\tTận dụng luôn LangGraph (X1) + promptfoo (X3) để đo độ chính xác. Đặc biệt chú ý nạp few-shot các hàm đặc thù của ClickHouse. Loại Vanna (archived 03/2026) và PremSQL (ngưng từ 02/2025).",
+    "phase": 3,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B6": {
+    "title": "Pandera Polars dirty rows",
+    "original": "3b (Chất lượng DL)\tPandera (Chạy trực tiếp trên Polars DataFrame)\tGreat Expectations\tDùng ngay\tPandera hỗ trợ kiểm định trực tiếp Polars DataFrame (từ bước 4a) cực nhẹ. Bỏ Soda Core (vướng license v4) và dbt tests (nếu chưa dùng dbt).",
+    "phase": 2,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B7": {
+    "title": "datacompy tolerance + Polars",
+    "original": "3c (Đối chiếu số)\tdatacompy\tGreat Expectations\tDùng ngay\tCó sẵn tham số sai số abs_tol / rel_tol (R21) để đối chiếu bảng Agent tính với báo cáo bảo hành gốc. (Soda OSS v3 không có tính năng này).",
+    "phase": 2,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B8": {
+    "title": "EDA + HITL drill-down",
+    "original": "4b (Tìm nguyên nhân)\tDrill-down có người duyệt (LangGraph + HITL + Polars)\tDoWhy (Chỉ gọi khi có giả thuyết rõ)\tDùng ngay, thận trọng\tTái sử dụng hoàn toàn stack của 4a! Agent phân rã số liệu bảo hành theo chiều (sản phẩm, lỗi, đại lý) rồi trình người duyệt, tuyệt đối không để LLM tự phán nhân quả. Loại PyRCA.",
+    "phase": 3,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B9": {
+    "title": "Forecast rolling origin",
+    "original": "4c (Thống kê, Dự báo)\tstatsmodels + StatsForecast\tProphet\tDùng ngay\tNhẹ, chuẩn xác, đóng gói thành @tool trong LangGraph để chạy dự báo lượng yêu cầu bảo hành hoặc kiểm định thống kê (R32, R33). Loại AIDE, RD-Agent.",
+    "phase": 2,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B10": {
+    "title": "Evidence + Marimo",
+    "original": "5 + 6 (Biểu đồ, Báo cáo)\tEvidence.dev (Hoặc dùng Marimo/Quarto nếu muốn thuần Python 100%)\tSuperset\tThử nhanh\tKiểm tra nhanh plugin @evidence-dev/clickhouse. Mẹo tối giản: Nếu muốn tránh cài thêm Node.js của Evidence, dùng Marimo/Quarto sẽ tái sử dụng được luôn clickhouse-connect + Polars của bước 4a! Loại LIDA (ngưng 08/2024) và Metabase (AGPL).",
+    "phase": 4,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": true
+  },
+  "B11": {
+    "title": "Prefect cron + retry",
+    "original": "7 (Lên lịch)\tPrefect\tDagster\tDùng ngay\tNhẹ nhất cho Python workflow, bọc trực tiếp quanh luồng chạy của LangGraph để xuất báo cáo định kỳ (R42). Loại Airflow (nặng) và Elementary.",
+    "phase": 4,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": true
+  },
+  "B12": {
+    "title": "ClickHouse security + Presidio",
+    "original": "X2 (Bảo mật)\tClickHouse Native (Read-only, Row Policy, Quota, View) + OpenMetadata PII + Presidio\tView che cột trên ClickHouse\tDùng ngay\tKhông tốn thêm công cụ quản trị quyền (bỏ Apache Ranger). Chỉ cần viết thêm Regex PatternRecognizer vào Presidio cho định dạng CCCD (12 số) và Biển số xe VN (R50–R52).",
+    "phase": 2,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "B13": {
+    "title": "Langfuse + promptfoo",
+    "original": "X3 (Quan sát, Đánh giá)\tLangfuse (Tracing) + promptfoo (Eval/Benchmark)\tDeepEval\tDùng ngay\tLangfuse (MIT license) gắn trực tiếp vào callback của LangGraph. promptfoo dùng để benchmark bộ câu hỏi Text-to-SQL ClickHouse ở bước 3a (R55).",
+    "phase": 4,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": true
+  },
+  "B14": {
+    "title": "End-to-end",
+    "original": "Tỉ lệ bảo hành giảm chấn sau theo dòng xe quý này so với quý trước?",
+    "phase": 4,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  },
+  "A1": {
+    "title": "Vanna đã archived tháng 03/2026 (GitHub archived flag + ngày).",
+    "original": "Vanna đã archived tháng 03/2026 (GitHub archived flag + ngày).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A2": {
+    "title": "PremSQL ngưng hoạt động từ 02/2025 (commit/release cuối).",
+    "original": "PremSQL ngưng hoạt động từ 02/2025 (commit/release cuối).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A3": {
+    "title": "PandasAI ngưng từ 10/2025.",
+    "original": "PandasAI ngưng từ 10/2025.",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A4": {
+    "title": "LIDA ngưng từ 08/2024.",
+    "original": "LIDA ngưng từ 08/2024.",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A5": {
+    "title": "Soda Core v4 có vấn đề license; Soda OSS v3 không có tolerance abs/rel (đọc LICENSE + docs).",
+    "original": "Soda Core v4 có vấn đề license; Soda OSS v3 không có tolerance abs/rel (đọc LICENSE + docs).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A6": {
+    "title": "MetricFlow hỗ trợ ClickHouse ở mức experimental.",
+    "original": "MetricFlow hỗ trợ ClickHouse ở mức experimental.",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A7": {
+    "title": "Langfuse license MIT (phần core; ghi rõ phần nào không phải MIT, nếu có).",
+    "original": "Langfuse license MIT (phần core; ghi rõ phần nào không phải MIT, nếu có).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A8": {
+    "title": "Metabase là AGPL.",
+    "original": "Metabase là AGPL.",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A9": {
+    "title": "DataHub thiếu Glossary/Auto-PII so với OpenMetadata (so sánh docs hai bên, nêu rõ nếu claim quá tay).",
+    "original": "DataHub thiếu Glossary/Auto-PII so với OpenMetadata (so sánh docs hai bên, nêu rõ nếu claim quá tay).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A10": {
+    "title": "Apache Ranger: không cần dùng với ClickHouse (kiểm: ClickHouse có RBAC native đủ dùng?).",
+    "original": "Apache Ranger: không cần dùng với ClickHouse (kiểm: ClickHouse có RBAC native đủ dùng?).",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "A11": {
+    "title": "Với mỗi tool trong bảng (kể cả dự phòng): license, version mới nhất, ngày release cuối, trạng thái maintain.",
+    "original": "Với mỗi tool trong bảng (kể cả dự phòng): license, version mới nhất, ngày release cuối, trạng thái maintain.",
+    "phase": 2,
+    "services": [],
+    "heavy": false
+  },
+  "P1": {
+    "title": "Đối chiếu dữ liệu nền Pha 1",
+    "original": "Seed ClickHouse + ground truth độc lập; không xác nhận claim công cụ.",
+    "phase": 1,
+    "services": [
+      "ClickHouse"
+    ],
+    "heavy": false
+  }
+}
